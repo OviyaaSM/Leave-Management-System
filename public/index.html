@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Leave Management System</h1>
+
+    <!-- Login -->
+    <div id="login-section">
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <label>Email:</label>
+            <input type="email" id="email" required>
+            <button>Login</button>
+        </form>
+
+        <p>Don't have an account?
+            <button id="show-registration">Create User</button>
+        </p>
+    </div>
+
+    <!-- Registration -->
+    <div id="registration-section" style="display:none">
+        <h2>Create User</h2>
+
+        <form id="registration-form">
+            <label>Username:</label>
+            <input id="username" required>
+
+            <label>Email:</label>
+            <input type="email" id="reg-email" required>
+
+            <label>Roll Number:</label>
+            <input id="roll-number" required>
+
+            <label>Initial Casual Leave:</label>
+            <input type="number" id="casual-leave" value="0">
+
+            <label>Initial Medical Leave:</label>
+            <input type="number" id="medical-leave" value="0">
+
+            <button>Register</button>
+        </form>
+
+        <p>Already have an account?
+            <button id="show-login">Login</button>
+        </p>
+
+        <div id="registration-response"></div>
+    </div>
+
+    <!-- Balance -->
+    <div id="balance-section" style="display:none">
+        <h2>Leave Balance</h2>
+
+        <p>
+            Welcome, <span id="username-display"></span>
+            (Roll Number: <span id="roll-number-display"></span>)
+        </p>
+
+        <p>Casual Leave:
+            <span id="casual-leave-display">Loading...</span>
+        </p>
+
+        <p>Medical Leave:
+            <span id="medical-leave-display">Loading...</span>
+        </p>
+
+        <button id="refresh-balance">Refresh Balance</button>
+        <button id="logout-button">Logout</button>
+    </div>
+
+    <!-- Apply Leave -->
+    <div id="apply-leave-section" style="display:none">
+        <h2>Apply for Leave</h2>
+
+        <form id="leave-form">
+            <label>Leave Type:</label>
+
+            <select id="leave-type">
+                <option value="casual">Casual</option>
+                <option value="medical">Medical</option>
+            </select>
+
+            <label>Number of Days:</label>
+            <input type="number" id="leave-days" min="1" required>
+
+            <button>Apply Leave</button>
+        </form>
+    </div>
+
+    <div id="response-message"></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
